@@ -28,6 +28,10 @@ if which apt-get; then
   sudo apt-get install --assume-yes build-essential freetds-dev libxml2 libxml2-dev libxslt1-dev tcl8.5
   
   echo '==> REDIS:::::'
+
+  # update pgp public key
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv DBB0271C5862E31D
+
   # need to update sources with custom PPA 
   echo 'deb http://ppa.launchpad.net/rwky/redis/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/redis.list
   echo 'deb-src http://ppa.launchpad.net/rwky/redis/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/redis.list
