@@ -27,6 +27,13 @@ if which apt-get; then
   sudo apt-get upgrade --assume-yes
   sudo apt-get install --assume-yes build-essential freetds-dev libxml2 libxml2-dev libxslt1-dev tcl8.5 python-software-properties  software-properties-common
   
+  #configure some defaults
+  export LANGUAGE=en_US.UTF-8
+  export LANG=en_US.UTF-8
+  export LC_ALL=en_US.UTF-8
+  locale-gen en_US.UTF-8
+  dpkg-reconfigure locales
+
   echo '==> REDIS:::::'
   # update sources automatically
   sudo add-apt-repository ppa:rwky/redis
@@ -36,7 +43,7 @@ if which apt-get; then
 
   # All Redis configuration options can be specified in the redis.conf file located at /etc/redis/redis.conf
   sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.default # make a backup of original redis config
-  sudo cp ./redis.conf /etc/redis/redis.conf
+  sudo cp -f "$BIN_DIR/redis.conf" /etc/redis/redis.conf
 fi
 
 echo '==> System Overlay'
