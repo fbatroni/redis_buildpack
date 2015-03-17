@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # bin/use <build-dir>
 
-if [ -f "/etc/redis/redis.conf" ]; then
-   echo "Redis!" && exit 0
-else
-  echo "no" && exit 1
-fi
+echo "Redis!" && exit 0
+
