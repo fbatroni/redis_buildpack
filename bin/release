@@ -6,5 +6,5 @@ BUILD_DIR=$1
 cat << EOF
 ---
 default_process_types:
-  web: redis-server /etc/redis/redis.conf
+  web: /usr/bin/redis-server& /etc/redis/redis.conf
 EOF
