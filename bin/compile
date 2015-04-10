@@ -39,7 +39,7 @@ if which apt-get; then
   sudo add-apt-repository ppa:rwky/redis
 
   sudo apt-get update --assume-yes
-  sudo apt-get install redis-server
+  sudo apt-get install redis-server --assume-yes
 
   # All Redis configuration options can be specified in the redis.conf file located at /etc/redis/redis.conf
   sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.default # make a backup of original redis config
